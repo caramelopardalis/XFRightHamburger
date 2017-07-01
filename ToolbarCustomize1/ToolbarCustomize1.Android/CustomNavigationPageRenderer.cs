@@ -13,8 +13,6 @@ namespace ToolbarCustomize1.Droid
 {
     public class CustomNavigationPageRenderer : NavigationPageRenderer
     {
-        private Android.Support.V7.Widget.Toolbar toolbar;
-
         protected override void OnElementChanged(ElementChangedEventArgs<NavigationPage> e)
         {
             base.OnElementChanged(e);
