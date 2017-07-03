@@ -10,15 +10,11 @@ using Xamarin.Forms.Xaml;
 namespace ToolbarCustomize1
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class MainMenuPageDetail : ContentPage
+    public partial class ModalPage : ContentPage
     {
-        public MainMenuPageDetail()
+        public ModalPage()
         {
             InitializeComponent();
-
-            NavigationButton.Clicked += (sender, e) => {
-                Navigation.PushModalAsync(new NavigationPage(new ModalPage()));
-            };
         }
     }
 }

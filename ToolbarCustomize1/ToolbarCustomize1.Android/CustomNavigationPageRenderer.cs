@@ -19,14 +19,24 @@ namespace ToolbarCustomize1.Droid
 
             e.NewElement.LayoutChanged += (sender, ea) =>
             {
-                var _drawerToggle = (ActionBarDrawerToggle)GetType().BaseType.GetField("_drawerToggle", System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic).GetValue(this);
-                if (_drawerToggle == null)
-                {
-                    return;
-                }
-
-                _drawerToggle.DrawerIndicatorEnabled = false;
+                ChangeVisibility();
             };
+
+            LayoutChange += (sender, ea) =>
+            {
+                ChangeVisibility();
+            };
+        }
+
+        void ChangeVisibility()
+        {
+            var _drawerToggle = (ActionBarDrawerToggle)GetType().BaseType.GetField("_drawerToggle", System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic).GetValue(this);
+            if (_drawerToggle == null)
+            {
+                return;
+            }
+
+            _drawerToggle.DrawerIndicatorEnabled = false;
         }
     }
 }
